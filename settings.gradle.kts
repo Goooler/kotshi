@@ -4,7 +4,7 @@ pluginManagement {
         google()
         mavenLocal()
     }
-    includeBuild("gradle-plugin")
+    includeBuild("build-logic")
 }
 
 plugins {
