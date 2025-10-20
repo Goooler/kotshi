@@ -1,16 +1,15 @@
 plugins {
-    kotlin("jvm") version embeddedKotlinVersion
     `kotlin-dsl`
-    `version-catalog`
 }
 
 dependencies {
-    implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
-    api(libs.kotlin.gradlePlugin)
-    api(libs.dokka.gradlePlugin)
-    api(libs.gradleMavenPublish)
+    implementation(libs.kotlin.gradlePlugin)
+    implementation(libs.dokka.gradlePlugin)
+    implementation(libs.gradleMavenPublish)
     implementation(gradleKotlinDsl())
-}
+
+    // TODO: https://github.com/gradle/gradle/issues/15383
+    implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))}
 
 java.toolchain {
     languageVersion.set(JavaLanguageVersion.of(21))

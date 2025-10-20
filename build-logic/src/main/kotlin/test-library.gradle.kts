@@ -1,10 +1,6 @@
-import org.gradle.accessors.dm.LibrariesForLibs
-
 plugins {
     id("library")
 }
-
-val libs = the<LibrariesForLibs>()
 
 dependencies {
     implementation(project(":api"))
